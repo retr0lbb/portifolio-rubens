@@ -3,6 +3,7 @@
 
 import { motion, useAnimation } from "framer-motion";
 import { useEffect, useCallback, useRef } from "react";
+import { twMerge } from "tailwind-merge";
 
 // Constantes de configuração centralizadas
 const NAVIGATION_CONFIG = {
@@ -133,7 +134,10 @@ interface NavigationLinkProps {
 function NavigationLink({ to, text, className = "" }: NavigationLinkProps) {
   return (
     <a
-      className={`text-textLight px-1.5 font-normal cursor-pointer text-lg opacity-100 group-hover:opacity-10 hover:opacity-100! transition-all ${className}`}
+      className={twMerge(
+        "text-textLight px-1.5 font-normal cursor-pointer text-lg opacity-100 group-hover:opacity-50 hover:opacity-100! transition-all",
+        className,
+      )}
       href={to}
     >
       {text}

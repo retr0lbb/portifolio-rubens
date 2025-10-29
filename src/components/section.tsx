@@ -10,7 +10,7 @@ export function Section(props: SectionProps) {
   return (
     <section
       className={twMerge(
-        "w-full h-dvh overflow-hidden flex flex-col",
+        "w-full h-dvh overflow-hidden flex flex-col bg-bgLight",
         props.className,
       )}
       id={props.anchor}
