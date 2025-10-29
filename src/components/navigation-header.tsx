@@ -4,6 +4,7 @@
 import { motion, useAnimation } from "framer-motion";
 import { useEffect, useCallback, useRef } from "react";
 import { twMerge } from "tailwind-merge";
+import Image from "next/image";
 
 // Constantes de configuração centralizadas
 const NAVIGATION_CONFIG = {
@@ -98,7 +99,7 @@ interface NavigationBodyProps extends React.ComponentProps<"div"> {
 function NavigationBody({ className = "", ...props }: NavigationBodyProps) {
   return (
     <div
-      className={`mt-4 px-6 py-3 bg-mainRed rounded-3xl text-white text-center shadow-md pointer-events-auto ${className}`}
+      className={`mt-4 px-6 py-3 bg-mainRed rounded-3xl text-white text-center flex items-center gap-2 shadow-md pointer-events-auto ${className}`}
       {...props}
     />
   );
@@ -145,9 +146,23 @@ function NavigationLink({ to, text, className = "" }: NavigationLinkProps) {
   );
 }
 
+function NavigationAvatar() {
+  return (
+    <Image
+      className="rounded-full border-2 border-white"
+      width={44}
+      height={44}
+      loading="lazy"
+      src="/avatar.png"
+      alt="White and Red Person With sunglasses Looking at the screen"
+    />
+  );
+}
+
 export {
   NavigationHeader,
   NavigationBody,
   NavigationLinksWrapper,
   NavigationLink,
+  NavigationAvatar,
 };

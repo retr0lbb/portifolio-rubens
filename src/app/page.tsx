@@ -5,6 +5,7 @@ import {
   NavigationBody,
   NavigationLink,
   NavigationLinksWrapper,
+  NavigationAvatar,
 } from "@/components/navigation-header";
 import { Section } from "@/components/section";
 
@@ -13,6 +14,7 @@ export default function Home() {
     <div className="min-h-dvh flex flex-col">
       <NavigationHeader>
         <NavigationBody>
+          <NavigationAvatar />
           <NavigationLinksWrapper>
             <NavigationLink text="Home" to={NAVIGATION_DESTINATIONS.HOME} />
             <NavigationLink text="About" to={NAVIGATION_DESTINATIONS.ABOUT} />
@@ -29,6 +31,12 @@ export default function Home() {
       </NavigationHeader>
       <Section>
         <GreateGrid />
+        <div className="flex flex-1 flex-col items-start justify-end pb-10 pt-2 px-4">
+          <h1 className="text-9xl font-bold text-textDark">Rubens Araújo</h1>
+          <p className="text-2xl font-medium text-textSecondary">
+            Eager to transform your dreams to reality
+          </p>
+        </div>
       </Section>
     </div>
   );
