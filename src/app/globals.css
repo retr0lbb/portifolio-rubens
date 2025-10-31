@@ -3,9 +3,11 @@
 @theme{
   --color-mainRed: #DD1C1A;
   --color-textDark: #181714;
-  --color-textSecondary: "#2A2B2A"
+  --color-textSecondary: "#2A2B2A";
   --color-textLight: #FFF8F7;
+  --color-textMuted: #C6C0BF; 
   --color-bgLight: #FFF5DF;
+  --color-bg-dark: #0F0F0C;
 }
 
 

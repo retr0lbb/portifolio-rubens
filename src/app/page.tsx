@@ -12,7 +12,12 @@ import ART from "@/assets/art.jpg";
 import Mike from "@/assets/Mike.jpg";
 import Jam from "@/assets/vince.webp";
 import Adobe from "@/assets/adobe.png";
+import Nike from "@/assets/nik.png";
+import MIME from "@/assets/mime.webp";
+import DOOM from "@/assets/doom.webp";
+import BFF from "@/assets/bff.png";
 import { PolaroidPhoto } from "@/components/polaroid-image";
+import { ProjectCard } from "@/components/project-card";
 
 export default function Home() {
   return (
@@ -44,7 +49,7 @@ export default function Home() {
         </div>
       </Section>
 
-      <Section className="min-h-dvh flex flex-col">
+      <Section className="min-h-dvh flex flex-col p-5">
         <div className="w-full h-full flex flex-col">
           <div className="w-full p-5 flex items-center justify-end">
             <h1 className="text-8xl text-textDark font-semibold">About Me</h1>
@@ -94,6 +99,41 @@ export default function Home() {
               />
             </div>
           </div>
+        </div>
+      </Section>
+      <Section className="min-h-dvh flex flex-col items-center bg-textDark p-4">
+        <div className="h-full w-auto columns-1 sm:columns-2 md:columns-3 max-w-full px-6">
+          <ProjectCard
+            src={ART}
+            title="Louv're Museum 7781, 2022"
+            desc="Classical art, painting 2025"
+          />
+          <ProjectCard
+            src={Nike}
+            title='Nike "Be Free", 2024'
+            desc="Very Modern art for nike campaing, youth, freedom"
+          />
+          <ProjectCard
+            src={MIME}
+            title='Adobe "IM Different", 2026'
+            desc="Modernist Adobe Different, inclusion"
+          />
+          <ProjectCard
+            src={DOOM}
+            title="Dooms Day, marvel, 2024"
+            desc="HQ like style for dooms story."
+          />
+          <ProjectCard
+            src={Jam}
+            title="Space Jam, 1987"
+            desc="Movie about basketball with cartoon characters."
+          />
+
+          <ProjectCard
+            src={BFF}
+            title="BRASIL FURFEST 2026"
+            desc="Furry Event with HQ like style."
+          />
         </div>
       </Section>
     </div>
