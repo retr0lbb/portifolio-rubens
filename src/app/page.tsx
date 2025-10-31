@@ -101,8 +101,107 @@ export default function Home() {
           </div>
         </div>
       </Section>
-      <Section className="min-h-dvh flex flex-col items-center bg-textDark p-4">
-        <div className="h-full w-auto columns-1 sm:columns-2 md:columns-3 max-w-full px-6">
+      <Section className="min-h-dvh flex flex-col items-center bg-textDark p-4 gap-4">
+        <div className="w-full py-4 px-5 space-y-2">
+          <h1 className="text-textLight font-semibold text-6xl">My Projects</h1>
+          <p className="text-lg text-textMuted">
+            You Wanna Know what i have been working on?
+          </p>
+        </div>
+        <div className="h-full w-auto columns-1 sm:columns-2 md:columns-3 max-w-full px-6 pb-8">
+          <ProjectCard
+            src={ART}
+            title="Louv're Museum 7781, 2022"
+            desc="Classical art, painting 2025"
+          />
+          <ProjectCard
+            src={Nike}
+            title='Nike "Be Free", 2024'
+            desc="Very Modern art for nike campaing, youth, freedom"
+          />
+          <ProjectCard
+            src={MIME}
+            title='Adobe "IM Different", 2026'
+            desc="Modernist Adobe Different, inclusion"
+          />
+          <ProjectCard
+            src={DOOM}
+            title="Dooms Day, marvel, 2024"
+            desc="HQ like style for dooms story."
+          />
+          <ProjectCard
+            src={Jam}
+            title="Space Jam, 1987"
+            desc="Movie about basketball with cartoon characters."
+          />
+
+          <ProjectCard
+            src={BFF}
+            title="BRASIL FURFEST 2026"
+            desc="Furry Event with HQ like style."
+          />
+          <ProjectCard
+            src={ART}
+            title="Louv're Museum 7781, 2022"
+            desc="Classical art, painting 2025"
+          />
+          <ProjectCard
+            src={Nike}
+            title='Nike "Be Free", 2024'
+            desc="Very Modern art for nike campaing, youth, freedom"
+          />
+          <ProjectCard
+            src={MIME}
+            title='Adobe "IM Different", 2026'
+            desc="Modernist Adobe Different, inclusion"
+          />
+          <ProjectCard
+            src={DOOM}
+            title="Dooms Day, marvel, 2024"
+            desc="HQ like style for dooms story."
+          />
+          <ProjectCard
+            src={Jam}
+            title="Space Jam, 1987"
+            desc="Movie about basketball with cartoon characters."
+          />
+
+          <ProjectCard
+            src={BFF}
+            title="BRASIL FURFEST 2026"
+            desc="Furry Event with HQ like style."
+          />
+          <ProjectCard
+            src={ART}
+            title="Louv're Museum 7781, 2022"
+            desc="Classical art, painting 2025"
+          />
+          <ProjectCard
+            src={Nike}
+            title='Nike "Be Free", 2024'
+            desc="Very Modern art for nike campaing, youth, freedom"
+          />
+          <ProjectCard
+            src={MIME}
+            title='Adobe "IM Different", 2026'
+            desc="Modernist Adobe Different, inclusion"
+          />
+          <ProjectCard
+            src={DOOM}
+            title="Dooms Day, marvel, 2024"
+            desc="HQ like style for dooms story."
+          />
+          <ProjectCard
+            src={Jam}
+            title="Space Jam, 1987"
+            desc="Movie about basketball with cartoon characters."
+          />
+
+          <ProjectCard
+            src={BFF}
+            title="BRASIL FURFEST 2026"
+            desc="Furry Event with HQ like style."
+          />
           <ProjectCard
             src={ART}
             title="Louv're Museum 7781, 2022"
@@ -136,6 +235,8 @@ export default function Home() {
           />
         </div>
       </Section>
+
+      <Section anchor="contact" className="flex flex-col min-h-dvh"></Section>
     </div>
   );
 }
