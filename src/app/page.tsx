@@ -8,10 +8,15 @@ import {
   NavigationAvatar,
 } from "@/components/navigation-header";
 import { Section } from "@/components/section";
+import ART from "@/assets/art.jpg";
+import Mike from "@/assets/Mike.jpg";
+import Jam from "@/assets/vince.webp";
+import Adobe from "@/assets/adobe.png";
+import { PolaroidPhoto } from "@/components/polaroid-image";
 
 export default function Home() {
   return (
-    <div className="min-h-dvh flex flex-col">
+    <div className="min-h-dvh flex flex-col overflow-hidden">
       <NavigationHeader>
         <NavigationBody>
           <NavigationAvatar />
@@ -29,13 +34,66 @@ export default function Home() {
           </NavigationLinksWrapper>
         </NavigationBody>
       </NavigationHeader>
-      <Section>
+      <Section anchor="home" className="">
         <GreateGrid />
         <div className="flex flex-1 flex-col items-start justify-end pb-10 pt-2 px-4">
           <h1 className="text-9xl font-bold text-textDark">Rubens Araújo</h1>
           <p className="text-2xl font-medium text-textSecondary">
             Eager to transform your dreams to reality
           </p>
+        </div>
+      </Section>
+
+      <Section className="min-h-dvh flex flex-col">
+        <div className="w-full h-full flex flex-col">
+          <div className="w-full p-5 flex items-center justify-end">
+            <h1 className="text-8xl text-textDark font-semibold">About Me</h1>
+          </div>
+
+          <div className="relative py-20 px-4 sm:px-6 lg:px-8">
+            {/* Fio vermelho */}
+            <div className="absolute top-[74px] left-0 right-0 h-0.5 bg-red-600 z-0"></div>
+
+            {/* Container das fotos */}
+            <div className="flex flex-wrap gap-6 sm:gap-8 md:gap-12 justify-center items-start relative z-10 max-w-7xl mx-auto">
+              <PolaroidPhoto
+                src={ART}
+                alt="Descrição"
+                desc="Rubens Araújo Filho - 2006"
+                rotation={-2}
+                index={0}
+              />
+              <PolaroidPhoto
+                src={Jam}
+                alt="Descrição"
+                desc="I have Passion for basketball and I have played on an amateur team"
+                rotation={-1}
+                index={1}
+              />
+              <PolaroidPhoto
+                src={Adobe}
+                alt="Descrição"
+                rotation={2}
+                desc="I'm a graphics designer i got hired as a designer for the first time in 2020."
+                index={2}
+              />
+
+              <PolaroidPhoto
+                src={Mike}
+                alt="Descrição"
+                rotation={2}
+                desc="In the next 30 years i plan to start my own company."
+                index={3}
+              />
+              <PolaroidPhoto
+                src={Jam}
+                alt="Descrição"
+                desc="Henrique is my sugar daddy he gives me anything i want 💘"
+                rotation={-1}
+                index={5}
+              />
+            </div>
+          </div>
         </div>
       </Section>
     </div>

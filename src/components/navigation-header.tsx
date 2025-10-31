@@ -26,10 +26,10 @@ const NAVIGATION_CONFIG = {
 } as const;
 
 export enum NAVIGATION_DESTINATIONS {
-  HOME = "#home",
-  ABOUT = "#about",
-  PROJECTS = "#projects",
-  CONTACT = "#contact",
+  HOME = "/#home",
+  ABOUT = "/#about",
+  PROJECTS = "/#projects",
+  CONTACT = "/#contact",
 }
 
 interface NavigationHeaderProps {
