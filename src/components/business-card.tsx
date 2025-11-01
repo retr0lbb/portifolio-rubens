@@ -39,7 +39,7 @@ export function BusinessCard(props: BusinessCardProps) {
           <div className="w-full h-full border-2 border-textMuted bg-bgLight flex items-center justify-between p-6 md:p-8 lg:p-10 gap-6 md:gap-8 lg:gap-10 shadow-lg rounded-lg">
             {/* Logo/Iniciais */}
             <div className="aspect-square min-w-[100px] md:min-w-[120px] lg:min-w-[140px] bg-mainRed flex items-center justify-center shadow-md">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-textLight">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-textLight font-gothic">
                 {props.initials || "R'B"}
               </h1>
             </div>
@@ -47,10 +47,10 @@ export function BusinessCard(props: BusinessCardProps) {
             {/* Informações */}
             <div className="flex flex-1 flex-col justify-between gap-4 min-h-[140px]">
               <div className="flex flex-col gap-1">
-                <h1 className="text-2xl md:text-3xl lg:text-4xl font-light text-textDark">
+                <h1 className="text-2xl md:text-3xl lg:text-4xl font-light text-textDark font-montserrat">
                   {props.name || "Rubens Araújo"}
                 </h1>
-                <p className="text-base md:text-lg lg:text-xl font-bold text-mainRed">
+                <p className="text-base md:text-lg lg:text-xl font-bold text-mainRed font-montserrat">
                   {props.role || "Junior Graphics Designer"}
                 </p>
               </div>
@@ -147,7 +147,7 @@ export function BusinessCard(props: BusinessCardProps) {
 
             {/* Footer hint */}
             <div className="border-t border-textMuted pt-4">
-              <p className="text-xs text-textMuted italic text-right">
+              <p className="text-xs text-textMuted font-montserrat italic text-right">
                 ← Click to flip back
               </p>
             </div>

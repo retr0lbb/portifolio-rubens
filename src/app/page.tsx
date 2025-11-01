@@ -18,8 +18,7 @@ import DOOM from "@/assets/doom.webp";
 import BFF from "@/assets/bff.png";
 import { PolaroidPhoto } from "@/components/polaroid-image";
 import { ProjectCard } from "@/components/project-card";
-import { PostCard } from "@/components/post-card-contact";
-import { FaBehanceSquare, FaLinkedin } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import Link from "next/link";
 import { BusinessCard } from "@/components/business-card";
@@ -31,38 +30,42 @@ export default function Home() {
         <NavigationBody>
           <NavigationAvatar />
           <NavigationLinksWrapper>
-            <NavigationLink text="Home" to={NAVIGATION_DESTINATIONS.HOME} />
-            <NavigationLink text="About" to={NAVIGATION_DESTINATIONS.ABOUT} />
-            <NavigationLink
-              text="Projects"
-              to={NAVIGATION_DESTINATIONS.PROJECTS}
-            />
-            <NavigationLink
-              text="Contact"
-              to={NAVIGATION_DESTINATIONS.CONTACT}
-            />
+            <NavigationLink text="Home" to={"/#home"} />
+            <NavigationLink text="About" to={"/#about"} />
+            <NavigationLink text="Projects" to={"/#projects"} />
+            <NavigationLink text="Contact" to={"/#contact"} />
           </NavigationLinksWrapper>
         </NavigationBody>
       </NavigationHeader>
-      <Section anchor="home" className="">
+      <Section
+        anchor="home"
+        className="min-h-auto gap-20 md:min-h-dvh md:gap-0"
+      >
         <GreateGrid />
         <div className="flex flex-1 flex-col items-start justify-end pb-10 pt-2 px-4">
-          <h1 className="text-9xl font-bold text-textDark">Rubens Araújo</h1>
-          <p className="text-2xl font-medium text-textSecondary">
+          <h1 className="text-4xl md:text-5xl lg:text-8xl font-bold text-textDark font-gothic">
+            Rubens Araújo
+          </h1>
+          <p className="text-lg md:text-2xl font-medium font-montserrat text-textSecondary">
             Eager to transform your dreams to reality
           </p>
         </div>
       </Section>
 
-      <Section className="min-h-dvh flex flex-col p-5">
+      <Section
+        anchor="about"
+        className="min-h-dvh flex flex-col p-5 border-t border-textMuted"
+      >
         <div className="w-full h-full flex flex-col">
-          <div className="w-full p-5 flex items-center justify-end">
-            <h1 className="text-8xl text-textDark font-semibold">About Me</h1>
+          <div className="w-full p-5 flex items-center justify-center md:justify-end">
+            <h1 className="text-4xl md:text-6xl text-textDark font-gothic">
+              What About Me?
+            </h1>
           </div>
 
-          <div className="relative py-20 px-4 sm:px-6 lg:px-8">
+          <div className="relative py-10 md:py-20 px-4 sm:px-6 lg:px-8">
             {/* Fio vermelho */}
-            <div className="absolute top-[74px] left-0 right-0 h-0.5 bg-red-600 z-0"></div>
+            <div className="hidden md:absolute md:top-[74px] left-0 right-0 h-0.5 bg-red-600 z-0"></div>
 
             {/* Container das fotos */}
             <div className="flex flex-wrap gap-6 sm:gap-8 md:gap-12 justify-center items-start relative z-10 max-w-7xl mx-auto">
@@ -106,10 +109,15 @@ export default function Home() {
           </div>
         </div>
       </Section>
-      <Section className="min-h-dvh flex flex-col items-center bg-textDark p-4 gap-4">
-        <div className="w-full py-4 px-5 space-y-2">
-          <h1 className="text-textLight font-semibold text-6xl">My Projects</h1>
-          <p className="text-lg text-textMuted">
+      <Section
+        anchor="projects"
+        className="min-h-dvh flex flex-col items-center bg-textDark p-4 gap-4"
+      >
+        <div className="w-full py-6 md:py-4 px-5 space-y-2">
+          <h1 className="text-textLight font-gothic text-4xl md:text-6xl">
+            My Projects
+          </h1>
+          <p className="text-lg font-montserrat text-textMuted">
             You Wanna Know what i have been working on?
           </p>
         </div>
@@ -246,40 +254,12 @@ export default function Home() {
         className="flex flex-col min-h-auto py-10 gap-10 pb-24"
       >
         <div className="w-full flex flex-col bg-red-40 px-5 py-8">
-          <h1 className="text-6xl font-bold">Contact Information</h1>
+          <h1 className="text-3xl md:text-6xl text-textDark font-gothic">
+            Contact Information
+          </h1>
         </div>
         <div className=" flex flex-1 items-center justify-center">
-          {/* <div className="w-4/6 h-[600px]">
-            <PostCard
-              frontTitle="Hello from Paris!"
-              frontMessage="Bonjour!"
-              backMessage="Having the most wonderful time!"
-              backSignature="- Marie"
-            />
-          </div> */}
-          {/* <div className="border border-zinc-200 flex items-center justify-center py-10 px-5 gap-10">
-            <div className="aspect-square min-w-40 bg-amber-600 flex items-center justify-center">
-              <h1 className="text-9xl text-black">R'B</h1>
-            </div>
-
-            <div className="flex flex-1 flex-col justify-between">
-              <div className="flex flex-col gap-0.5">
-                <h1 className="text-4xl font-light">Rubens Araújo</h1>
-                <p className="text-lg font-bold">Junior Graphics Designer</p>
-              </div>
-
-              <div>
-                <Link
-                  target="_blank"
-                  href={"https://www.behance.net/rubensaraujo3"}
-                  className="flex items-center gap-1"
-                >
-                  <FaBehanceSquare /> www.behance.net/rubensaraujo3
-                </Link>
-              </div>
-            </div>
-          </div> */}
-          <div className="w-full max-w-2xl h-[280px]">
+          <div className="w-full px-8 md:px-0 md:max-w-2xl h-[286px]">
             {/** biome-ignore lint/a11y/useValidAriaRole: <needless> */}
             <BusinessCard
               name="Rubens Araújo"
@@ -292,23 +272,17 @@ export default function Home() {
           </div>
         </div>
       </Section>
-      <footer className="w-full min-h-20 bg-bg-dark grid grid-cols-2 px-10">
+      <footer className="w-full min-h-14 bg-textDark grid grid-cols-2 px-10">
         <div className="flex items-center justify-center">
-          <p className="text-sm text-textMuted">
+          <p className="text-sm text-textMuted font-montserrat">
             © 2025 made by{" "}
             <Link href={"https://github.com/retr0lbb"}>retr0lbb</Link>
           </p>
         </div>
 
         <div className="flex items-center justify-end gap-4">
-          <FaGithub
-            size={24}
-            className="text-xl text-textMuted cursor-pointer"
-          />
-          <FaLinkedin
-            size={24}
-            className="text-xl text-textMuted cursor-pointer"
-          />
+          <FaGithub className="size-5 md:size-6 text-textMuted cursor-pointer" />
+          <FaLinkedin className="size-5 md:size-6 text-textMuted cursor-pointer" />
         </div>
       </footer>
     </div>

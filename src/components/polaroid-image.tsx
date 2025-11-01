@@ -76,7 +76,7 @@ export function PolaroidPhoto(props: PolaroidPhotoProps) {
         {/* Descrição ou espaço em branco */}
         <div className="min-h-[60px] sm:min-h-[80px] flex items-center justify-center px-2">
           {props.desc ? (
-            <p className="text-gray-700 text-sm sm:text-base text-center">
+            <p className="text-gray-700 text-base sm:text-lg text-center font-montserrat font-bold">
               {props.desc}
             </p>
           ) : (

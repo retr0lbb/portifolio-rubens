@@ -5,6 +5,7 @@ import { motion, useAnimation } from "framer-motion";
 import { useEffect, useCallback, useRef } from "react";
 import { twMerge } from "tailwind-merge";
 import Image from "next/image";
+import Link from "next/link";
 
 // Constantes de configuração centralizadas
 const NAVIGATION_CONFIG = {
@@ -26,10 +27,10 @@ const NAVIGATION_CONFIG = {
 } as const;
 
 export enum NAVIGATION_DESTINATIONS {
-  HOME = "/#home",
-  ABOUT = "/#about",
-  PROJECTS = "/#projects",
-  CONTACT = "/#contact",
+  HOME = "#home",
+  ABOUT = "#about",
+  PROJECTS = "#projects",
+  CONTACT = "#contact",
 }
 
 interface NavigationHeaderProps {
@@ -134,7 +135,7 @@ interface NavigationLinkProps {
 
 function NavigationLink({ to, text, className = "" }: NavigationLinkProps) {
   return (
-    <a
+    <Link
       className={twMerge(
         "text-textLight px-1.5 font-normal cursor-pointer text-lg opacity-100 group-hover:opacity-50 hover:opacity-100! transition-all",
         className,
@@ -142,7 +143,7 @@ function NavigationLink({ to, text, className = "" }: NavigationLinkProps) {
       href={to}
     >
       {text}
-    </a>
+    </Link>
   );
 }
 

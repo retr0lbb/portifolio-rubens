@@ -8,7 +8,15 @@
   --color-textMuted: #C6C0BF; 
   --color-bgLight: #FFF5DF;
   --color-bg-dark: #0F0F0C;
+
+
+  --font-caveat: var(--font-caveat);
+  --font-notable: var(--font-notable);
+  --font-montserrat: var(--font-montserrat);
+  --font-gothic: var(--font-gothic);
+
 }
+
 
 /* No globals.css */
 .perspective-1000 {
