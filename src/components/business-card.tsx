@@ -8,6 +8,8 @@ import {
   FaLinkedin,
   FaEnvelope,
 } from "react-icons/fa";
+import Image from "next/image";
+import MenorQuente from "@/assets/menor-quente.svg";
 
 interface BusinessCardProps {
   name?: string;
@@ -39,9 +41,7 @@ export function BusinessCard(props: BusinessCardProps) {
           <div className="w-full h-full border-2 border-textMuted bg-bgLight flex items-center justify-between p-6 md:p-8 lg:p-10 gap-6 md:gap-8 lg:gap-10 shadow-lg rounded-lg">
             {/* Logo/Iniciais */}
             <div className="aspect-square min-w-[100px] md:min-w-[120px] lg:min-w-[140px] bg-mainRed flex items-center justify-center shadow-md">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-textLight font-gothic">
-                {props.initials || "R'B"}
-              </h1>
+              <Image width={100} alt="menor quente" src={MenorQuente} />
             </div>
 
             {/* Informações */}

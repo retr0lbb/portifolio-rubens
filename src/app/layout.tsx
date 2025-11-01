@@ -8,6 +8,7 @@ import {
   Montserrat,
   Special_Gothic_Expanded_One,
 } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -18,26 +19,6 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
-});
-
-const caveat = Caveat({
-  variable: "--font-caveat",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
-
-const notable = Notable({
-  variable: "--font-notable",
-  subsets: ["latin"],
-  weight: ["400"],
-});
-
-const zalando = Zalando_Sans_Expanded({
-  variable: "--font-zalando",
-  preload: true,
-  style: "normal",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
 });
 
 const montserrat = Montserrat({
@@ -52,6 +33,18 @@ const gothic = Special_Gothic_Expanded_One({
   style: "normal",
   subsets: ["latin"],
   weight: ["400"],
+  fallback: ["Arial", "sans-serif"],
+});
+
+const Rokiest = localFont({
+  variable: "--font-rokiest",
+  src: [
+    { weight: "400", path: "../assets/fonts/Rokiest-Regular.otf" },
+    { weight: "500", path: "../assets/fonts/Rokiest-Medium.otf" },
+    { weight: "600", path: "../assets/fonts/Rokiest-SemiBold.otf" },
+    { weight: "700", path: "../assets/fonts/Rokiest-Bold.otf" },
+    { weight: "900", path: "../assets/fonts/Rokiest-ExtraBlack.otf" },
+  ],
 });
 
 export const metadata: Metadata = {
@@ -67,7 +60,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${caveat.variable} ${gothic.variable} ${montserrat.variable} antialiased w-full h-full`}
+        className={`${geistSans.variable} ${geistMono.variable} ${gothic.variable} ${montserrat.variable} ${Rokiest.variable} antialiased w-full h-full`}
       >
         <div id="root" className="h-full">
           {children}
