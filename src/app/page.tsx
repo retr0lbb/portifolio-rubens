@@ -18,6 +18,11 @@ import DOOM from "@/assets/doom.webp";
 import BFF from "@/assets/bff.png";
 import { PolaroidPhoto } from "@/components/polaroid-image";
 import { ProjectCard } from "@/components/project-card";
+import { PostCard } from "@/components/post-card-contact";
+import { FaBehanceSquare, FaLinkedin } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
+import Link from "next/link";
+import { BusinessCard } from "@/components/business-card";
 
 export default function Home() {
   return (
@@ -236,7 +241,76 @@ export default function Home() {
         </div>
       </Section>
 
-      <Section anchor="contact" className="flex flex-col min-h-dvh"></Section>
+      <Section
+        anchor="contact"
+        className="flex flex-col min-h-auto py-10 gap-10 pb-24"
+      >
+        <div className="w-full flex flex-col bg-red-40 px-5 py-8">
+          <h1 className="text-6xl font-bold">Contact Information</h1>
+        </div>
+        <div className=" flex flex-1 items-center justify-center">
+          {/* <div className="w-4/6 h-[600px]">
+            <PostCard
+              frontTitle="Hello from Paris!"
+              frontMessage="Bonjour!"
+              backMessage="Having the most wonderful time!"
+              backSignature="- Marie"
+            />
+          </div> */}
+          {/* <div className="border border-zinc-200 flex items-center justify-center py-10 px-5 gap-10">
+            <div className="aspect-square min-w-40 bg-amber-600 flex items-center justify-center">
+              <h1 className="text-9xl text-black">R'B</h1>
+            </div>
+
+            <div className="flex flex-1 flex-col justify-between">
+              <div className="flex flex-col gap-0.5">
+                <h1 className="text-4xl font-light">Rubens Araújo</h1>
+                <p className="text-lg font-bold">Junior Graphics Designer</p>
+              </div>
+
+              <div>
+                <Link
+                  target="_blank"
+                  href={"https://www.behance.net/rubensaraujo3"}
+                  className="flex items-center gap-1"
+                >
+                  <FaBehanceSquare /> www.behance.net/rubensaraujo3
+                </Link>
+              </div>
+            </div>
+          </div> */}
+          <div className="w-full max-w-2xl h-[280px]">
+            {/** biome-ignore lint/a11y/useValidAriaRole: <needless> */}
+            <BusinessCard
+              name="Rubens Araújo"
+              role="Junior Graphics Designer"
+              initials="RB"
+              behance="https://www.behance.net/rubensaraujo3"
+              linkedin="https://linkedin.com/in/rubens"
+              email="rubens@example.com"
+            />
+          </div>
+        </div>
+      </Section>
+      <footer className="w-full min-h-20 bg-bg-dark grid grid-cols-2 px-10">
+        <div className="flex items-center justify-center">
+          <p className="text-sm text-textMuted">
+            © 2025 made by{" "}
+            <Link href={"https://github.com/retr0lbb"}>retr0lbb</Link>
+          </p>
+        </div>
+
+        <div className="flex items-center justify-end gap-4">
+          <FaGithub
+            size={24}
+            className="text-xl text-textMuted cursor-pointer"
+          />
+          <FaLinkedin
+            size={24}
+            className="text-xl text-textMuted cursor-pointer"
+          />
+        </div>
+      </footer>
     </div>
   );
 }
