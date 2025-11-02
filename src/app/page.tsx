@@ -7,16 +7,17 @@ import {
   NavigationAvatar,
 } from "@/components/navigation-header";
 import { Section } from "@/components/section";
-import ART from "@/assets/art.jpg";
-import Nike from "@/assets/nik.png";
-import MIME from "@/assets/mime.webp";
-import MenorQuente from "@/assets/menor-quente.svg";
+import Kaet from "@/assets/kaete.jpg";
+import IAB from "@/assets/iaboa.jpg";
+import PRAN from "@/assets/pranc.jpg";
 import { ProjectCard } from "@/components/project-card";
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import Link from "next/link";
 import { BusinessCard } from "@/components/business-card";
 import Image from "next/image";
+import { MenorQuente } from "@/components/menor-quente";
+import { MenorQuenteParalax } from "@/components/menor-quente-paralax";
 
 export default function Home() {
   return (
@@ -32,37 +33,45 @@ export default function Home() {
           </NavigationLinksWrapper>
         </NavigationBody>
       </NavigationHeader>
-      <Section className="min-h-dvh" anchor="home">
+      <Section className="min-h-dvh relative" anchor="home">
+        <div className="w-full flex items-center justify-between px-10 py-8 top-0">
+          <p className="text-2xl font-rokiest text-blue-700">PORTFOLIO</p>
+          <p className="text-2xl font-rokiest text-blue-700">2025</p>
+        </div>
         <div className="w-full h-full flex flex-1 items-center justify-center">
-          <div className="flex flex-col items-center justify-end">
-            <span className="text-9xl text-left font-rokiest z-20 text-mainRed">
+          <div className="flex flex-col items-center justify-end gap">
+            <span className="text-7xl lg:text-10xl leading-none text-left font-rokiest z-20 text-mainRed">
               DESIGN
             </span>
-            <div className="text-9xl text-left flex items-center gap-2 relative font-rokiest pr-64 z-10 text-mainRed">
+            <div className="text-7xl lg:text-10xl leading-none text-left flex items-center gap-2 relative font-rokiest pr-32 md:pr-[264px] -mt-2.5 z-10 text-mainRed">
               VISUALS
-              <div className=" absolute right-0 z-0">
-                <Image
-                  alt="menorQuente"
-                  src={MenorQuente}
-                  width={224}
-                  style={{ rotate: "24deg" }}
-                  className=""
-                />
-              </div>
+              <MenorQuente />
             </div>
 
-            <span className="font-rokiest text-9xl text-left z-10 text-mainRed">
+            <span className="font-rokiest text-7xl lg:text-10xl leading-none text-left z-10 -mt-2.5 text-mainRed">
               STORIES
             </span>
           </div>
         </div>
       </Section>
 
-      <Section anchor="about" className="bg-blue-400"></Section>
+      <Section anchor="about" className=" bg-mainRed relative">
+        <div className="absolute inset-0 w-full h-full grid grid-cols-2 place-items-center">
+          <h1 className="text-9xl font-rokiest text-white">
+            RUBENS<br></br> ARAUJO
+          </h1>
+          <p className="text-4xl font-rokiest text-white">
+            Graphics Designer, Open to freelance
+          </p>
+        </div>
+        <div className="w-full bg-mainRed min-h-dvh grid grid-cols-1 place-items-center">
+          <MenorQuenteParalax />
+        </div>
+      </Section>
 
       <Section
         anchor="projects"
-        className="min-h-dvh flex flex-col items-center bg-textDark p-4 gap-4"
+        className="min-h-dvh flex flex-col items-center justify-center bg-textDark p-4 gap-8 md:gap-12 lg:gap-32"
       >
         <div className="w-full py-6 md:py-4 px-5 space-y-2">
           <h1 className="text-textLight font-gothic text-4xl md:text-6xl">
@@ -74,19 +83,22 @@ export default function Home() {
         </div>
         <div className="h-full w-auto columns-1 sm:columns-2 md:columns-3 max-w-full px-6 pb-8">
           <ProjectCard
-            src={ART}
-            title="Louv're Museum 7781, 2022"
-            desc="Classical art, painting 2025"
+            src={IAB}
+            title="IA Boa"
+            desc="Digital app design focused on pubs"
+            href="https://www.behance.net/gallery/219051477/IaBoa-Identidade-Visual"
           />
           <ProjectCard
-            src={Nike}
-            title='Nike "Be Free", 2024'
-            desc="Very Modern art for nike campaing, youth, freedom"
+            src={Kaet}
+            title="Caeté"
+            desc="Major logo design for clothe company"
+            href="https://www.instagram.com/caeteloja"
           />
           <ProjectCard
-            src={MIME}
-            title='Adobe "IM Different", 2026'
-            desc="Modernist Adobe Different, inclusion"
+            src={PRAN}
+            href="https://www.behance.net/gallery/216466691/Brazilian-Icons-Vintage-Sports-Posters"
+            title="Vintage Sports Posters"
+            desc="Posters design representing the greatest Brazilian athletes"
           />
         </div>
       </Section>

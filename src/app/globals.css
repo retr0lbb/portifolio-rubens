@@ -15,10 +15,11 @@
   --font-montserrat: var(--font-montserrat);
   --font-gothic: var(--font-gothic);
   --font-rokiest: var(--font-rokiest);
+
+
+  --text-10xl: 10rem;
 }
 
-
-/* No globals.css */
 .perspective-1000 {
   perspective: 1000px;
 }

@@ -38,16 +38,51 @@ export function BusinessCard(props: BusinessCardProps) {
           className="absolute w-full h-full backface-hidden"
           style={{ backfaceVisibility: "hidden" }}
         >
-          <div className="w-full h-full border-2 border-textMuted bg-bgLight flex items-center justify-between p-6 md:p-8 lg:p-10 gap-6 md:gap-8 lg:gap-10 shadow-lg rounded-lg">
+          <div className="w-full h-full border-2 border-textMuted bg-white flex items-center justify-between p-6 md:p-8 lg:p-10 gap-6 md:gap-8 lg:gap-10 shadow-lg rounded-lg relative overflow-hidden">
+            {/* Textura de Gesso */}
+            <div
+              className="absolute inset-0 opacity-30 pointer-events-none"
+              style={{
+                backgroundImage: `
+                  repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(0, 0, 0, 0.03) 2px,
+                    rgba(0, 0, 0, 0.03) 4px
+                  ),
+                  repeating-linear-gradient(
+                    90deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(0, 0, 0, 0.03) 2px,
+                    rgba(0, 0, 0, 0.03) 4px
+                  ),
+                  radial-gradient(
+                    circle at 20% 30%,
+                    rgba(255, 255, 255, 0.8) 0%,
+                    transparent 50%
+                  ),
+                  radial-gradient(
+                    circle at 80% 70%,
+                    rgba(0, 0, 0, 0.05) 0%,
+                    transparent 50%
+                  )
+                `,
+                backgroundSize: "100% 100%, 100% 100%, 200% 200%, 200% 200%",
+                filter: "blur(0.5px)",
+              }}
+            />
+
             {/* Logo/Iniciais */}
-            <div className="aspect-square min-w-[100px] md:min-w-[120px] lg:min-w-[140px] bg-mainRed flex items-center justify-center shadow-md">
+            <div className="aspect-square min-w-[100px] md:min-w-[120px] lg:min-w-[140px] bg-mainRed flex items-center justify-center shadow-md relative z-10">
               <Image width={100} alt="menor quente" src={MenorQuente} />
             </div>
 
             {/* Informações */}
-            <div className="flex flex-1 flex-col justify-between gap-4 min-h-[140px]">
+            <div className="flex flex-1 flex-col justify-between gap-4 min-h-[140px] relative z-10">
               <div className="flex flex-col gap-1">
-                <h1 className="text-2xl md:text-3xl lg:text-4xl font-light text-textDark font-montserrat">
+                <h1 className="text-2xl md:text-3xl lg:text-4xl font-light text-bg-dark font-montserrat">
                   {props.name || "Rubens Araújo"}
                 </h1>
                 <p className="text-base md:text-lg lg:text-xl font-bold text-mainRed font-montserrat">
@@ -69,7 +104,6 @@ export function BusinessCard(props: BusinessCardProps) {
                 </Link>
               </div>
 
-              {/* Hint para virar */}
               <div className="text-xs text-textMuted italic">
                 Click to see contact info →
               </div>
@@ -85,23 +119,53 @@ export function BusinessCard(props: BusinessCardProps) {
             transform: "rotateY(180deg)",
           }}
         >
-          <div className="w-full h-full border-2 border-textMuted bg-textDark flex flex-col justify-between p-6 md:p-8 lg:p-10 shadow-lg rounded-lg">
+          <div className="w-full h-full border-2 border-textMuted bg-textDark flex flex-col justify-between p-6 md:p-8 lg:p-10 shadow-lg rounded-lg relative overflow-hidden">
+            {/* Textura de Gesso (versão escura) */}
+            <div
+              className="absolute inset-0 opacity-20 pointer-events-none"
+              style={{
+                backgroundImage: `
+                  repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(255, 255, 255, 0.02) 2px,
+                    rgba(255, 255, 255, 0.02) 4px
+                  ),
+                  repeating-linear-gradient(
+                    90deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(255, 255, 255, 0.02) 2px,
+                    rgba(255, 255, 255, 0.02) 4px
+                  ),
+                  radial-gradient(
+                    circle at 20% 30%,
+                    rgba(255, 255, 255, 0.05) 0%,
+                    transparent 50%
+                  )
+                `,
+                backgroundSize: "100% 100%, 100% 100%, 200% 200%",
+                filter: "blur(0.5px)",
+              }}
+            />
+
             {/* Header */}
-            <div className="border-b border-textMuted pb-4">
-              <h2 className="text-xl md:text-2xl font-bold text-mainRed">
+            <div className="border-b border-textMuted pb-4 relative z-10">
+              <h2 className="text-xl md:text-2xl font-bold text-blue-600">
                 Contact Information
               </h2>
             </div>
 
             {/* Links */}
-            <div className="flex-1 flex flex-col justify-center gap-4 py-4">
+            <div className="flex-1 flex flex-col justify-center gap-4 py-4 relative z-10">
               {props.email && (
                 <Link
                   href={`mailto:${props.email}`}
-                  className="inline-flex items-center gap-3 text-textLight hover:text-mainRed transition-colors group w-fit"
+                  className="inline-flex items-center gap-3 text-textLight hover:text-blue-600 transition-colors group w-fit"
                   onClick={(e) => e.stopPropagation()}
                 >
-                  <FaEnvelope className="text-xl md:text-2xl text-mainRed group-hover:scale-110 transition-transform" />
+                  <FaEnvelope className="text-xl md:text-2xl text-blue-600 group-hover:scale-110 transition-transform" />
                   <span className="text-sm md:text-base">{props.email}</span>
                 </Link>
               )}
@@ -110,10 +174,10 @@ export function BusinessCard(props: BusinessCardProps) {
                 <Link
                   target="_blank"
                   href={props.linkedin}
-                  className="inline-flex items-center gap-3 text-textLight hover:text-mainRed transition-colors group w-fit"
+                  className="inline-flex items-center gap-3 text-textLight hover:text-blue-600 transition-colors group w-fit"
                   onClick={(e) => e.stopPropagation()}
                 >
-                  <FaLinkedin className="text-xl md:text-2xl text-mainRed group-hover:scale-110 transition-transform" />
+                  <FaLinkedin className="text-xl md:text-2xl text-blue-600 group-hover:scale-110 transition-transform" />
                   <span className="text-sm md:text-base">LinkedIn Profile</span>
                 </Link>
               )}
@@ -122,10 +186,10 @@ export function BusinessCard(props: BusinessCardProps) {
                 <Link
                   target="_blank"
                   href={props.github}
-                  className="inline-flex items-center gap-3 text-textLight hover:text-mainRed transition-colors group w-fit"
+                  className="inline-flex items-center gap-3 text-textLight hover:text-blue-600 transition-colors group w-fit"
                   onClick={(e) => e.stopPropagation()}
                 >
-                  <FaGithub className="text-xl md:text-2xl text-mainRed group-hover:scale-110 transition-transform" />
+                  <FaGithub className="text-xl md:text-2xl text-blue-600 group-hover:scale-110 transition-transform" />
                   <span className="text-sm md:text-base">GitHub Profile</span>
                 </Link>
               )}
@@ -134,10 +198,10 @@ export function BusinessCard(props: BusinessCardProps) {
                 <Link
                   target="_blank"
                   href={props.behance}
-                  className="inline-flex items-center gap-3 text-textLight hover:text-mainRed transition-colors group w-fit"
+                  className="inline-flex items-center gap-3 text-textLight hover:text-blue-600 transition-colors group w-fit"
                   onClick={(e) => e.stopPropagation()}
                 >
-                  <FaBehanceSquare className="text-xl md:text-2xl text-mainRed group-hover:scale-110 transition-transform" />
+                  <FaBehanceSquare className="text-xl md:text-2xl text-blue-600 group-hover:scale-110 transition-transform" />
                   <span className="text-sm md:text-base">
                     Behance Portfolio
                   </span>
@@ -146,7 +210,7 @@ export function BusinessCard(props: BusinessCardProps) {
             </div>
 
             {/* Footer hint */}
-            <div className="border-t border-textMuted pt-4">
+            <div className="border-t border-textMuted pt-4 relative z-10">
               <p className="text-xs text-textMuted font-montserrat italic text-right">
                 ← Click to flip back
               </p>
