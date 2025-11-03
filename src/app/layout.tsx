@@ -38,7 +38,6 @@ const Rokiest = localFont({
   src: [
     { weight: "400", path: "./fonts/Rokiest-Regular.otf" },
     { weight: "500", path: "./fonts/Rokiest-Medium.otf" },
-    { weight: "600", path: "./fonts/Rokiest-SemiBold.otf" },
     { weight: "700", path: "./fonts/Rokiest-Bold.otf" },
     { weight: "900", path: "./fonts/Rokiest-ExtraBlack.otf" },
   ],
