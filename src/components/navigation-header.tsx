@@ -6,6 +6,7 @@ import { useEffect, useCallback, useRef } from "react";
 import { twMerge } from "tailwind-merge";
 import Image from "next/image";
 import Link from "next/link";
+import MenorQuente from "@/assets/menor-quente.svg";
 
 // Constantes de configuração centralizadas
 const NAVIGATION_CONFIG = {
@@ -154,7 +155,7 @@ function NavigationAvatar() {
       width={44}
       height={44}
       loading="lazy"
-      src="/avatar.png"
+      src={MenorQuente}
       alt="White and Red Person With sunglasses Looking at the screen"
     />
   );
