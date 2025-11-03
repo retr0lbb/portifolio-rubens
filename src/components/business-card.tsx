@@ -1,12 +1,14 @@
+/** biome-ignore-all lint/a11y/useKeyWithClickEvents: <no need> */
+/** biome-ignore-all lint/a11y/noStaticElementInteractions: <no need> */
 "use client";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import Link from "next/link";
 import {
   FaBehanceSquare,
-  FaGithub,
   FaLinkedin,
   FaEnvelope,
+  FaInstagram,
 } from "react-icons/fa";
 import Image from "next/image";
 import MenorQuente from "@/assets/menor-quente.svg";
@@ -16,7 +18,7 @@ interface BusinessCardProps {
   role?: string;
   initials?: string;
   behance?: string;
-  github?: string;
+  instagram?: string;
   linkedin?: string;
   email?: string;
 }
@@ -25,18 +27,21 @@ export function BusinessCard(props: BusinessCardProps) {
   const [isFlipped, setIsFlipped] = useState(false);
 
   return (
-    <div className="perspective-1000 w-full h-full min-h-[280px] cursor-pointer">
+    <div className="perspective-1000 w-full h-full min-h-[280px]">
       <motion.div
         className="relative w-full h-full"
         style={{ transformStyle: "preserve-3d" }}
         animate={{ rotateY: isFlipped ? 180 : 0 }}
         transition={{ duration: 0.6, ease: "easeInOut" }}
-        onClick={() => setIsFlipped(!isFlipped)}
       >
         {/* Frente do Card */}
         <motion.div
-          className="absolute w-full h-full backface-hidden"
-          style={{ backfaceVisibility: "hidden" }}
+          className="absolute w-full h-full backface-hidden cursor-pointer"
+          style={{
+            backfaceVisibility: "hidden",
+            pointerEvents: isFlipped ? "none" : "auto",
+          }}
+          onClick={() => setIsFlipped(true)}
         >
           <div className="w-full h-full border-2 border-textMuted bg-white flex items-center justify-between p-4 md:p-8 lg:p-10 gap-6 md:gap-8 lg:gap-10 shadow-lg rounded-lg relative overflow-hidden">
             {/* Textura de Gesso */}
@@ -96,7 +101,7 @@ export function BusinessCard(props: BusinessCardProps) {
                   href={
                     props.behance || "https://www.behance.net/rubensaraujo3"
                   }
-                  className="inline-flex items-center gap-2 hover:text-mainRed transition-colors text-sm md:text-base"
+                  className="inline-flex items-center gap-2 hover:text-mainRed transition-colors text-sm md:text-base w-fit"
                   onClick={(e) => e.stopPropagation()}
                 >
                   <FaBehanceSquare className="text-lg md:text-xl" />
@@ -117,55 +122,63 @@ export function BusinessCard(props: BusinessCardProps) {
           style={{
             backfaceVisibility: "hidden",
             transform: "rotateY(180deg)",
+            pointerEvents: isFlipped ? "auto" : "none",
           }}
         >
           <div className="w-full h-full border-2 border-textMuted bg-white flex flex-col justify-between p-6 md:p-8 lg:p-10 shadow-lg rounded-lg relative overflow-hidden">
-            {/* Textura de Gesso (versão escura) */}
+            {/* Textura de Gesso */}
             <div
-              className="absolute inset-0 opacity-20 pointer-events-none"
+              className="absolute inset-0 opacity-30 pointer-events-none"
               style={{
                 backgroundImage: `
                   repeating-linear-gradient(
                     0deg,
                     transparent,
                     transparent 2px,
-                    rgba(255, 255, 255, 0.02) 2px,
-                    rgba(255, 255, 255, 0.02) 4px
+                    rgba(0, 0, 0, 0.03) 2px,
+                    rgba(0, 0, 0, 0.03) 4px
                   ),
                   repeating-linear-gradient(
                     90deg,
                     transparent,
                     transparent 2px,
-                    rgba(255, 255, 255, 0.02) 2px,
-                    rgba(255, 255, 255, 0.02) 4px
+                    rgba(0, 0, 0, 0.03) 2px,
+                    rgba(0, 0, 0, 0.03) 4px
                   ),
                   radial-gradient(
                     circle at 20% 30%,
-                    rgba(255, 255, 255, 0.05) 0%,
+                    rgba(255, 255, 255, 0.8) 0%,
+                    transparent 50%
+                  ),
+                  radial-gradient(
+                    circle at 80% 70%,
+                    rgba(0, 0, 0, 0.05) 0%,
                     transparent 50%
                   )
                 `,
-                backgroundSize: "100% 100%, 100% 100%, 200% 200%",
+                backgroundSize: "100% 100%, 100% 100%, 200% 200%, 200% 200%",
                 filter: "blur(0.5px)",
               }}
             />
 
-            {/* Header */}
-            <div className="border-b border-textMuted pb-4 relative z-10">
-              <h2 className="text-xl md:text-2xl font-bold text-blue-600">
+            {/* Header - Clicável para voltar */}
+            <div
+              className="border-b border-textMuted pb-4 relative z-10 cursor-pointer"
+              onClick={() => setIsFlipped(false)}
+            >
+              <h2 className="text-xl md:text-2xl font-bold text-mainRed">
                 Contact Information
               </h2>
             </div>
 
-            {/* Links */}
+            {/* Links - Área interativa */}
             <div className="flex-1 flex flex-col justify-center gap-4 py-4 relative z-10">
               {props.email && (
                 <Link
                   href={`mailto:${props.email}`}
-                  className="inline-flex items-center gap-3 text-textDark hover:text-blue-600 transition-colors group w-fit"
-                  onClick={(e) => e.stopPropagation()}
+                  className="inline-flex items-center gap-3 text-textDark hover:text-mainRed transition-colors group w-fit"
                 >
-                  <FaEnvelope className="text-xl md:text-2xl text-blue-600 group-hover:scale-110 transition-transform" />
+                  <FaEnvelope className="text-xl md:text-2xl text-mainRed group-hover:scale-110 transition-transform" />
                   <span className="text-sm md:text-base">{props.email}</span>
                 </Link>
               )}
@@ -174,43 +187,32 @@ export function BusinessCard(props: BusinessCardProps) {
                 <Link
                   target="_blank"
                   href={props.linkedin}
-                  className="inline-flex items-center gap-3 text-textDark hover:text-blue-600 transition-colors group w-fit"
-                  onClick={(e) => e.stopPropagation()}
+                  className="inline-flex items-center gap-3 text-textDark hover:text-mainRed transition-colors group w-fit"
                 >
-                  <FaLinkedin className="text-xl md:text-2xl text-blue-600 group-hover:scale-110 transition-transform" />
-                  <span className="text-sm md:text-base">LinkedIn Profile</span>
+                  <FaLinkedin className="text-xl md:text-2xl text-mainRed group-hover:scale-110 transition-transform" />
+                  <span className="text-sm md:text-base">{props.linkedin}</span>
                 </Link>
               )}
 
-              {props.github && (
+              {props.instagram && (
                 <Link
                   target="_blank"
-                  href={props.github}
-                  className="inline-flex items-center gap-3 text-textDark hover:text-blue-600 transition-colors group w-fit"
-                  onClick={(e) => e.stopPropagation()}
+                  href={props.instagram}
+                  className="inline-flex items-center gap-3 text-textDark hover:text-mainRed transition-colors group w-fit"
                 >
-                  <FaGithub className="text-xl md:text-2xl text-blue-600 group-hover:scale-110 transition-transform" />
-                  <span className="text-sm md:text-base">GitHub Profile</span>
-                </Link>
-              )}
-
-              {props.behance && (
-                <Link
-                  target="_blank"
-                  href={props.behance}
-                  className="inline-flex items-center gap-3 text-textDark hover:text-blue-600 transition-colors group w-fit"
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  <FaBehanceSquare className="text-xl md:text-2xl text-blue-600 group-hover:scale-110 transition-transform" />
+                  <FaInstagram className="text-xl md:text-2xl text-mainRed group-hover:scale-110 transition-transform" />
                   <span className="text-sm md:text-base">
-                    Behance Portfolio
+                    {props.instagram}
                   </span>
                 </Link>
               )}
             </div>
 
-            {/* Footer hint */}
-            <div className="border-t border-textMuted pt-4 relative z-10">
+            {/* Footer hint - Clicável para voltar */}
+            <div
+              className="border-t border-textMuted pt-4 relative z-10 cursor-pointer"
+              onClick={() => setIsFlipped(false)}
+            >
               <p className="text-xs text-textMuted font-montserrat italic text-right">
                 ← Click to flip back
               </p>

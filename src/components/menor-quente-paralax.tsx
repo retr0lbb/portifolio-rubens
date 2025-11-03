@@ -4,7 +4,7 @@
 import MenorQuente from "@/assets/menor_quentao.png";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { useState, MouseEvent } from "react";
+import { useState, type MouseEvent } from "react";
 
 export function MenorQuenteParalax() {
   const [position, setPosition] = useState({ x: 0, y: 0 });

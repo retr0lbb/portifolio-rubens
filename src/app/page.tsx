@@ -131,13 +131,14 @@ export default function Home() {
               role="Junior Graphic Designer"
               initials="RB"
               behance="https://www.behance.net/rubensaraujo3"
-              linkedin="https://linkedin.com/in/rubens"
-              email="rubens@example.com"
+              linkedin="https://www.linkedin.com/in/rubensaraujofilho"
+              instagram="https://www.instagram.com/rubns.araujo"
+              email="rubensaraujo877@gmail.com"
             />
           </div>
         </div>
       </Section>
-      <footer className="w-full min-h-14 bg-textDark grid grid-cols-2 px-10">
+      <footer className="w-full min-h-14 bg-textDark flex items-center justify-between px-10">
         <div className="flex items-center justify-center">
           <p className="text-sm text-textMuted font-montserrat">
             © 2025 made by{" "}
@@ -146,8 +147,12 @@ export default function Home() {
         </div>
 
         <div className="flex items-center justify-end gap-4">
-          <FaGithub className="size-5 md:size-6 text-textMuted cursor-pointer" />
-          <FaLinkedin className="size-5 md:size-6 text-textMuted cursor-pointer" />
+          <Link href={"https://github.com/retr0lbb"}>
+            <FaGithub className="size-5 md:size-6 text-textMuted cursor-pointer" />
+          </Link>
+          <Link href={"https://www.linkedin.com/in/henrique-barbosa-sampaio/"}>
+            <FaLinkedin className="size-5 md:size-6 text-textMuted cursor-pointer" />
+          </Link>
         </div>
       </footer>
     </div>
