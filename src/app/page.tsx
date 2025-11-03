@@ -55,17 +55,33 @@ export default function Home() {
         </div>
       </Section>
 
-      <Section anchor="about" className=" bg-mainRed relative">
-        <div className="absolute inset-0 w-full h-full grid grid-cols-2 place-items-center">
-          <h1 className="text-9xl font-rokiest text-white">
-            RUBENS<br></br> ARAUJO
-          </h1>
-          <p className="text-4xl font-rokiest text-white">
-            Graphics Designer, Open to freelance
-          </p>
-        </div>
-        <div className="w-full bg-mainRed min-h-dvh grid grid-cols-1 place-items-center">
-          <MenorQuenteParalax />
+      <Section anchor="about" className="bg-mainRed">
+        <div className="w-full min-h-dvh grid grid-cols-1 lg:grid-cols-3 gap-8 p-5 md:p-10 lg:p-0">
+          {/* Coluna 1 - Nome */}
+          <div className="flex items-center justify-center lg:justify-start lg:pl-10 xl:pl-20">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-9xl font-rokiest text-white text-center lg:text-left leading-tight">
+              RUBENS ARAUJO
+            </h1>
+          </div>
+
+          {/* Coluna 2 - Imagem Parallax */}
+          <div className="flex items-center justify-center min-h-[400px] lg:min-h-full">
+            <MenorQuenteParalax />
+          </div>
+
+          {/* Coluna 3 - Descrição */}
+          <div className="flex flex-col gap-4 justify-center lg:pr-10 xl:pr-20">
+            <p className="text-2xl sm:text-3xl md:text-4xl font-rokiest text-white text-center lg:text-left leading-tight">
+              GRAPHICS DESIGNER OPEN TO FREELANCE
+            </p>
+            <p className="text-base sm:text-lg md:text-xl font-montserrat text-white max-w-[600px] text-center lg:text-left mx-auto lg:mx-0">
+              Profissional criativo, apaixonado por design e com facilidade em
+              aprender e me adaptar a novos desafios. Tenho habilidades sólidas
+              em Photoshop, Illustrator e criação estratégica de mídias
+              digitais, sempre buscando soluções inovadoras para entregar
+              resultados de qualidade.
+            </p>
+          </div>
         </div>
       </Section>
 
@@ -105,15 +121,15 @@ export default function Home() {
 
       <Section
         anchor="contact"
-        className="flex flex-col min-h-auto py-10 gap-10 pb-24"
+        className="flex flex-col min-h-auto py-10 gap-20 md:gap-10 pb-48 md:pb-32"
       >
         <div className="w-full flex flex-col bg-red-40 px-5 py-8">
           <h1 className="text-3xl md:text-6xl text-textDark font-gothic">
-            Contact Information
+            Contact
           </h1>
         </div>
-        <div className=" flex flex-1 items-center justify-center">
-          <div className="w-full px-8 md:px-0 md:max-w-2xl h-[286px]">
+        <div className="flex flex-1 items-center justify-center">
+          <div className="w-full px-4 md:px-0 md:max-w-2xl h-[246px] md:h-[286px]">
             {/** biome-ignore lint/a11y/useValidAriaRole: <needless> */}
             <BusinessCard
               name="Rubens Araújo"

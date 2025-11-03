@@ -46,7 +46,7 @@ export function MenorQuenteParalax() {
         />
 
         {/* Imagem */}
-        <div className="w-[400px] h-[400px] relative">
+        <div className="w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] relative">
           <Image
             alt="menor pegando fogo"
             src={MenorQuente}
