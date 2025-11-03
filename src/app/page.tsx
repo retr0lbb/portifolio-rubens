@@ -1,4 +1,3 @@
-import { GreateGrid } from "@/components/great-grid";
 import {
   NavigationHeader,
   NavigationBody,
@@ -10,12 +9,11 @@ import { Section } from "@/components/section";
 import Kaet from "@/assets/kaete.jpg";
 import IAB from "@/assets/iaboa.jpg";
 import PRAN from "@/assets/pranc.jpg";
+import Link from "next/link";
 import { ProjectCard } from "@/components/project-card";
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
-import Link from "next/link";
 import { BusinessCard } from "@/components/business-card";
-import Image from "next/image";
 import { MenorQuente } from "@/components/menor-quente";
 import { MenorQuenteParalax } from "@/components/menor-quente-paralax";
 

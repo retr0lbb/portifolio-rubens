@@ -2,9 +2,6 @@ import type { Metadata } from "next";
 import {
   Geist,
   Geist_Mono,
-  Caveat,
-  Notable,
-  Zalando_Sans_Expanded,
   Montserrat,
   Special_Gothic_Expanded_One,
 } from "next/font/google";
