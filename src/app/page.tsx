@@ -87,14 +87,14 @@ export default function Home() {
 
       <Section
         anchor="projects"
-        className="min-h-dvh flex flex-col items-center justify-center bg-textDark p-4 gap-8 md:gap-12 lg:gap-32"
+        className="min-h-dvh flex flex-col items-center justify-center bg-white p-4 gap-8 md:gap-12 lg:gap-32"
       >
         <div className="w-full py-6 md:py-4 px-5 space-y-2">
-          <h1 className="text-textLight font-gothic text-4xl md:text-6xl">
-            My Projects
+          <h1 className="text-mainRed font-rokiest text-center text-6xl md:text-10xl">
+            MY PROJECTS
           </h1>
-          <p className="text-lg font-montserrat text-textMuted">
-            You Wanna Know what i have been working on?
+          <p className="text-lg md:text-3xl font-montserrat text-center text-blue-700">
+            WHAT I HAVE BEEN WORKING ON
           </p>
         </div>
         <div className="h-full w-auto columns-1 sm:columns-2 md:columns-3 max-w-full px-6 pb-8">
@@ -123,10 +123,8 @@ export default function Home() {
         anchor="contact"
         className="flex flex-col min-h-auto py-10 gap-20 md:gap-10 pb-48 md:pb-32"
       >
-        <div className="w-full flex flex-col bg-red-40 px-5 py-8">
-          <h1 className="text-3xl md:text-6xl text-textDark font-gothic">
-            Contact
-          </h1>
+        <div className="w-full flex items-center justify-center text-5xl font-rokiest text-">
+          CONTACT
         </div>
         <div className="flex flex-1 items-center justify-center">
           <div className="w-full px-4 md:px-0 md:max-w-2xl h-[246px] md:h-[286px]">

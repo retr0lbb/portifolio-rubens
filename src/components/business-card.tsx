@@ -119,7 +119,7 @@ export function BusinessCard(props: BusinessCardProps) {
             transform: "rotateY(180deg)",
           }}
         >
-          <div className="w-full h-full border-2 border-textMuted bg-textDark flex flex-col justify-between p-6 md:p-8 lg:p-10 shadow-lg rounded-lg relative overflow-hidden">
+          <div className="w-full h-full border-2 border-textMuted bg-white flex flex-col justify-between p-6 md:p-8 lg:p-10 shadow-lg rounded-lg relative overflow-hidden">
             {/* Textura de Gesso (versão escura) */}
             <div
               className="absolute inset-0 opacity-20 pointer-events-none"
@@ -162,7 +162,7 @@ export function BusinessCard(props: BusinessCardProps) {
               {props.email && (
                 <Link
                   href={`mailto:${props.email}`}
-                  className="inline-flex items-center gap-3 text-textLight hover:text-blue-600 transition-colors group w-fit"
+                  className="inline-flex items-center gap-3 text-textDark hover:text-blue-600 transition-colors group w-fit"
                   onClick={(e) => e.stopPropagation()}
                 >
                   <FaEnvelope className="text-xl md:text-2xl text-blue-600 group-hover:scale-110 transition-transform" />
@@ -174,7 +174,7 @@ export function BusinessCard(props: BusinessCardProps) {
                 <Link
                   target="_blank"
                   href={props.linkedin}
-                  className="inline-flex items-center gap-3 text-textLight hover:text-blue-600 transition-colors group w-fit"
+                  className="inline-flex items-center gap-3 text-textDark hover:text-blue-600 transition-colors group w-fit"
                   onClick={(e) => e.stopPropagation()}
                 >
                   <FaLinkedin className="text-xl md:text-2xl text-blue-600 group-hover:scale-110 transition-transform" />
@@ -186,7 +186,7 @@ export function BusinessCard(props: BusinessCardProps) {
                 <Link
                   target="_blank"
                   href={props.github}
-                  className="inline-flex items-center gap-3 text-textLight hover:text-blue-600 transition-colors group w-fit"
+                  className="inline-flex items-center gap-3 text-textDark hover:text-blue-600 transition-colors group w-fit"
                   onClick={(e) => e.stopPropagation()}
                 >
                   <FaGithub className="text-xl md:text-2xl text-blue-600 group-hover:scale-110 transition-transform" />
@@ -198,7 +198,7 @@ export function BusinessCard(props: BusinessCardProps) {
                 <Link
                   target="_blank"
                   href={props.behance}
-                  className="inline-flex items-center gap-3 text-textLight hover:text-blue-600 transition-colors group w-fit"
+                  className="inline-flex items-center gap-3 text-textDark hover:text-blue-600 transition-colors group w-fit"
                   onClick={(e) => e.stopPropagation()}
                 >
                   <FaBehanceSquare className="text-xl md:text-2xl text-blue-600 group-hover:scale-110 transition-transform" />

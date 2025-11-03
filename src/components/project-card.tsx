@@ -64,10 +64,10 @@ export function ProjectCard(props: ProjectCardProps) {
 
         {/* Textos estáticos */}
         <div className="flex flex-col gap-2">
-          <h1 className="font-semibold text-xl text-textLight font-montserrat">
+          <h1 className="font-semibold text-xl text-textDark font-montserrat">
             {props.title}
           </h1>
-          <p className="font-normal text-md text-textMuted font-montserrat">
+          <p className="font-normal text-md text-textSecondary font-montserrat">
             {props.desc}
           </p>
         </div>
