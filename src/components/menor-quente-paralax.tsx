@@ -1,7 +1,7 @@
-/** biome-ignore-all lint/a11y/noStaticElementInteractions: <explanation> */
+/** biome-ignore-all lint/a11y/noStaticElementInteractions: needless*/
 "use client";
 
-import MenorQuente from "@/assets/menor-quente-papel.png";
+import MenorQuente from "@/assets/menor_quentao.png";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useState, MouseEvent } from "react";

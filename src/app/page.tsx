@@ -22,7 +22,6 @@ export default function Home() {
     <div className="min-h-dvh flex flex-col overflow-hidden">
       <NavigationHeader>
         <NavigationBody>
-          <NavigationAvatar />
           <NavigationLinksWrapper>
             <NavigationLink text="Home" to={"/#home"} />
             <NavigationLink text="About" to={"/#about"} />
@@ -70,14 +69,14 @@ export default function Home() {
           {/* Coluna 3 - Descrição */}
           <div className="flex flex-col gap-4 justify-center lg:pr-10 xl:pr-20">
             <p className="text-2xl sm:text-3xl md:text-4xl font-rokiest text-white text-center lg:text-left leading-tight">
-              GRAPHICS DESIGNER OPEN TO FREELANCE
+              GRAPHIC DESIGNER<br></br>OPEN TO FREELANCE
             </p>
             <p className="text-base sm:text-lg md:text-xl font-montserrat text-white max-w-[600px] text-center lg:text-left mx-auto lg:mx-0">
-              Profissional criativo, apaixonado por design e com facilidade em
-              aprender e me adaptar a novos desafios. Tenho habilidades sólidas
-              em Photoshop, Illustrator e criação estratégica de mídias
-              digitais, sempre buscando soluções inovadoras para entregar
-              resultados de qualidade.
+              Creative professional, passionate about design and with an
+              aptitude for learning and adapting to new challenges. I have solid
+              skills in Photoshop, Illustrator, and strategic digital media
+              creation, always seeking innovative solutions to deliver quality
+              results.
             </p>
           </div>
         </div>
@@ -128,8 +127,8 @@ export default function Home() {
           <div className="w-full px-4 md:px-0 md:max-w-2xl h-[246px] md:h-[286px]">
             {/** biome-ignore lint/a11y/useValidAriaRole: <needless> */}
             <BusinessCard
-              name="Rubens Araújo"
-              role="Junior Graphics Designer"
+              name="Rubens Araujo"
+              role="Junior Graphic Designer"
               initials="RB"
               behance="https://www.behance.net/rubensaraujo3"
               linkedin="https://linkedin.com/in/rubens"

@@ -101,7 +101,7 @@ interface NavigationBodyProps extends React.ComponentProps<"div"> {
 function NavigationBody({ className = "", ...props }: NavigationBodyProps) {
   return (
     <div
-      className={`mt-4 px-6 py-3 bg-mainRed rounded-3xl text-white text-center flex items-center gap-2 shadow-md pointer-events-auto ${className}`}
+      className={`mt-4 px-6 py-3 bg-zinc-300 rounded-3xl text-textDark text-center flex items-center gap-2 shadow-md pointer-events-auto ${className}`}
       {...props}
     />
   );
@@ -138,7 +138,7 @@ function NavigationLink({ to, text, className = "" }: NavigationLinkProps) {
   return (
     <Link
       className={twMerge(
-        "text-textLight px-1.5 font-normal cursor-pointer text-lg opacity-100 group-hover:opacity-50 hover:opacity-100! transition-all",
+        "text-textDark px-1.5 font-normal cursor-pointer text-lg opacity-100 group-hover:opacity-50 hover:opacity-100! transition-all",
         className,
       )}
       href={to}

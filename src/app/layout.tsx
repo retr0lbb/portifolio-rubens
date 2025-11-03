@@ -43,7 +43,7 @@ const Rokiest = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Rubens Araújo",
+  title: "Rubens Araujo",
   description: "created by retr0lbb",
 };
 

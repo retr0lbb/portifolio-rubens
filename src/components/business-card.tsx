@@ -38,7 +38,7 @@ export function BusinessCard(props: BusinessCardProps) {
           className="absolute w-full h-full backface-hidden"
           style={{ backfaceVisibility: "hidden" }}
         >
-          <div className="w-full h-full border-2 border-textMuted bg-white flex items-center justify-between p-6 md:p-8 lg:p-10 gap-6 md:gap-8 lg:gap-10 shadow-lg rounded-lg relative overflow-hidden">
+          <div className="w-full h-full border-2 border-textMuted bg-white flex items-center justify-between p-4 md:p-8 lg:p-10 gap-6 md:gap-8 lg:gap-10 shadow-lg rounded-lg relative overflow-hidden">
             {/* Textura de Gesso */}
             <div
               className="absolute inset-0 opacity-30 pointer-events-none"
@@ -83,7 +83,7 @@ export function BusinessCard(props: BusinessCardProps) {
             <div className="flex flex-1 flex-col justify-between gap-4 min-h-[140px] relative z-10">
               <div className="flex flex-col gap-1">
                 <h1 className="text-2xl md:text-3xl lg:text-4xl font-light text-bg-dark font-montserrat">
-                  {props.name || "Rubens Araújo"}
+                  {props.name || "Rubens Araujo"}
                 </h1>
                 <p className="text-base md:text-lg lg:text-xl font-bold text-mainRed font-montserrat">
                   {props.role || "Junior Graphics Designer"}
