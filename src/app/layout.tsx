@@ -31,6 +31,7 @@ const gothic = Special_Gothic_Expanded_One({
   subsets: ["latin"],
   weight: ["400"],
   fallback: ["Arial", "sans-serif"],
+  adjustFontFallback: false, // ← Adicione essa linha
 });
 
 const Rokiest = localFont({
@@ -38,8 +39,6 @@ const Rokiest = localFont({
   src: [
     { weight: "400", path: "./fonts/Rokiest-Regular.otf" },
     { weight: "500", path: "./fonts/Rokiest-Medium.otf" },
-    { weight: "700", path: "./fonts/Rokiest-Bold.otf" },
-    { weight: "900", path: "./fonts/Rokiest-ExtraBlack.otf" },
   ],
 });
 
