@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import {
   Geist,
   Geist_Mono,
@@ -57,6 +58,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${gothic.variable} ${montserrat.variable} ${Rokiest.variable} antialiased w-full h-full`}
       >
+        <Analytics />
         <div id="root" className="h-full">
           {children}
         </div>
